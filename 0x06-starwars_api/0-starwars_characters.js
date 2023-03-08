@@ -1,12 +1,5 @@
 #!/usr/bin/node
 /**
- * Script that sends a request to Star Wars API (SWAP)
- * Requests for info on a movie based on its id
- * Movie ID is passed as an argument to the script
- * Prints characters in the movie based on response data
-*/
-
-/**
  * makeRequest - wrapper function for request
  * @url; (str): site url
  * Description: wraps around request object allowing it
@@ -26,8 +19,9 @@ function makeRequest (url) {
 
 /**
  * Main - entry point
- * Description: queries SWAP for movies titles based on their ID
- *              passed as argv and print movie's character on console
+ * Description: makes requests to Star Wars API for movie info based
+ *              movie ID passed as a CLI arg. Retrieves movie character info
+ *              then prints their names in order of appearance in the response.
  */
 async function main () {
   const args = process.argv;
