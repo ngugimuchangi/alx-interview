@@ -2,19 +2,21 @@
 """
 Pascal's triangle module
 """
-from functools import reduce
-from typing import List
 
 
-def factorial(n: int) -> int:
+def factorial(n):
     """ Computes the factorial of n
     """
     if not n:
         return 1
-    return reduce(lambda x, y: x * y, range(1, n + 1))
+    res = 1
+    for num in range(1, n + 1):
+        res *= num
+
+    return res
 
 
-def pascal_triangle(n: int) -> List[List[int]]:
+def pascal_triangle(n):
     """ Pascal's triangle generator that uses binomial theorem
         Args:
             - n: levels of pascal triangle
