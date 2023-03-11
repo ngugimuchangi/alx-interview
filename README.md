@@ -1,7 +1,8 @@
 # ALX Coding Interview Challenges
 
 ## About
-- Interview practice questions
+- Coding interview questions
 
 ## Projects
+- #### [0x00. Pascal's Triangle](0x00-pascal_triangle) 
 - #### [0x06. Star Wars API](0x06-starwars_api)
