@@ -15,7 +15,7 @@ def factorial(n: int) -> int:
 
 
 def pascal_triangle(n: int) -> List[List[int]]:
-    """ Pascal triangle generator that uses binomial theorem
+    """ Pascal's triangle generator that uses binomial theorem
         Args:
             - n: levels of pascal triangle
         Return:
