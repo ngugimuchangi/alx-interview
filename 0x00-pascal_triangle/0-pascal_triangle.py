@@ -4,20 +4,8 @@ Pascal's triangle module
 """
 
 
-def factorial(n):
-    """ Computes the factorial of n
-    """
-    if not n:
-        return 1
-    res = 1
-    for num in range(1, n + 1):
-        res *= num
-
-    return res
-
-
 def pascal_triangle(n):
-    """ Pascal's triangle generator that uses binomial theorem
+    """ Pascal's triangle generator using addition
         Args:
             - n: levels of pascal triangle
         Return:
@@ -25,14 +13,19 @@ def pascal_triangle(n):
     """
     if n <= 0:
         return []
-    pascal_triangle = []
-    for exponent in range(n):
-        row = []
-        for k in range(exponent + 1):
-            coefficient = (factorial(exponent)
-                           / (factorial(exponent - k)
-                           * factorial(k)))
-            row.append(int(coefficient))
-        pascal_triangle.append(row)
 
+    pascal_triangle = []
+    prev_row = []
+    for row in range(n):
+        new_row = []
+        for num in range(row + 1):
+            if num == 0:
+                new_row.append(1)
+                continue
+            try:
+                new_row.append(prev_row[num - 1] + prev_row[num])
+            except IndexError:
+                new_row.append(1)
+        prev_row = new_row
+        pascal_triangle.append(new_row)
     return pascal_triangle
