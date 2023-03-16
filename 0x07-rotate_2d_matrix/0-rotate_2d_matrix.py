@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 """ 2D Matrix rotation challenge
 """
-from typing import List
 
 
-def rotate_2d_matrix(matrix: List[List]) -> None:
+def rotate_2d_matrix(matrix):
     """ Rotates 2D matrix 90 decrease clockwise
         in place
         Args:
