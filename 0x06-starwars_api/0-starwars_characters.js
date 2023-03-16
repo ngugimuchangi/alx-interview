@@ -1,11 +1,11 @@
 #!/usr/bin/node
 /**
- * makeRequest - wrapper function for request
- * @url; (str): site url
- * Description: wraps around request object allowing it
- *              to work with async and await
- * Return: promise object that resolves with parsed JSON response
- *         and rejects with the request error.
+ * Wrapper function for request object that allows it
+ * to work with async and await
+ * @param {String} url - site url
+ * @returns {Promise} - promise object that resolves
+ *                      with parsed JSON response
+ *                      and rejects with the request error.
  */
 function makeRequest (url) {
   const request = require('request');
@@ -18,10 +18,10 @@ function makeRequest (url) {
 }
 
 /**
- * Main - entry point
- * Description: makes requests to Star Wars API for movie info based
- *              movie ID passed as a CLI arg. Retrieves movie character info
- *              then prints their names in order of appearance in the response.
+ * Entry point - makes requests to Star Wars API
+ * for movie info based movie ID passed as a CLI parameter.
+ * Retrieves movie character info then prints their names
+ * in order of appearance in the initial response.
  */
 async function main () {
   const args = process.argv;
