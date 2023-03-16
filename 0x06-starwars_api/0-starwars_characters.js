@@ -2,10 +2,10 @@
 /**
  * Wrapper function for request object that allows it
  * to work with async and await
- * @param {String} url - site url
- * @returns {Promise} - promise object that resolves
- *                      with parsed JSON response
- *                      and rejects with the request error.
+ * @param   {String} url - site url
+ * @returns {Promise}    - promise object that resolves
+ *                         with parsed JSON response
+ *                         and rejects with the request error.
  */
 function makeRequest (url) {
   const request = require('request');
