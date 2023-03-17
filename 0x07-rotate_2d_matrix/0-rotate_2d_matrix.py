@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" 2D Matrix rotation challenge
+"""
+2D Matrix rotation
+Matrix transposition approach
 """
 
 
@@ -9,12 +11,8 @@ def rotate_2d_matrix(matrix):
         Args:
             - matrix - 2D matrix
     """
-    inward_cycles = int(len(matrix) // 2)
-    last_idx = len(matrix) - 1
-    for i in range(inward_cycles):
-        for j in range(i, last_idx - i):
-            temp = matrix[i][j]
-            matrix[i][j] = matrix[last_idx - j][i]
-            matrix[last_idx - j][i] = matrix[last_idx - i][last_idx - j]
-            matrix[last_idx - i][last_idx - j] = matrix[j][last_idx - i]
-            matrix[j][last_idx - i] = temp
+    matrix.reverse()
+    m_len = len(matrix)
+    for i in range(m_len):
+        for j in range(i):
+            matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
