@@ -19,7 +19,7 @@ def makeChange(coins, total):
     coins.sort(reverse=True)
     coins_needed = 0
     for coin in coins:
-        if total / coin >= 0:
+        if total / coin > 0:
             coins_needed = coins_needed + (total // coin)
             total = total % coin
 
