@@ -14,7 +14,7 @@ def makeChange(coins, total):
         Return:
             - Minimum number of coins needed to make change.
     """
-    if not total:
+    if total == 0:
         return 0
     coins.sort(reverse=True)
     coins_needed = 0
@@ -23,6 +23,6 @@ def makeChange(coins, total):
             coins_needed = coins_needed + (total // coin)
             total = total % coin
 
-    if total != 0:
+    if total != 0 or coins_needed == 0:
         return -1
     return coins_needed
