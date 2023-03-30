@@ -8,7 +8,7 @@ def island_perimeter(grid):
     """
     perimeter = 0
     for row_index in range(len(grid)):
-        for cell_index in range(len(grid)):
+        for cell_index in range(len(grid[0])):
             current_cell = grid[row_index][cell_index]
             if not current_cell:
                 continue
