@@ -26,7 +26,4 @@ def minOperations(n: int) -> int:
         available_chars += copied_chars
         pending_chars -= copied_chars
         ops = ops + 2
-
-    if available_chars == n:
-        return ops
-    return 0
+    return ops
