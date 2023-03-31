@@ -8,7 +8,7 @@ def minOperations(n: int) -> int:
         to result in exactly nH characters in
         a file
     """
-    if not n or n == 1:
+    if n <= 0:
         return 0
     available_characters = 1
     pending_characters = n - 1
