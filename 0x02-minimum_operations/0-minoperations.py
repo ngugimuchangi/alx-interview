@@ -8,25 +8,25 @@ def minOperations(n: int) -> int:
         to result in exactly nH characters in
         a file
     """
-    available_characters = 1
-    pending_characters = n - 1
-    copied_characters = 0
+    available_chars = 1
+    pending_chars = n - 1
+    copied_chars = 0
     ops = 0
 
-    while (pending_characters > 0):
-        if copied_characters and pending_characters % available_characters:
-            pending_characters -= copied_characters
-            available_characters += copied_characters
+    while (pending_chars > 0):
+        if copied_chars and pending_chars % available_chars:
+            pending_chars -= copied_chars
+            available_chars += copied_chars
             ops += 1
             continue
-        if available_characters < pending_characters:
-            copied_characters = available_characters
+        if available_chars < pending_chars:
+            copied_chars = available_chars
         else:
-            copied_characters = pending_characters
-        available_characters += copied_characters
-        pending_characters -= copied_characters
+            copied_chars = pending_chars
+        available_chars += copied_chars
+        pending_chars -= copied_chars
         ops = ops + 2
 
-    if available_characters == n:
+    if available_chars == n:
         return ops
     return 0
