@@ -8,7 +8,6 @@ def minOperations(n: int) -> int:
     """ Finds the minimum operations needed
         to result in exactly nH characters in
         a file
-        - Operations possible: CopyAll and Paste
     """
     available_chars = 1
     pending_chars = n - 1
@@ -18,7 +17,7 @@ def minOperations(n: int) -> int:
     while (pending_chars > 0):
         if copied_chars and pending_chars % available_chars:
             ops += 1
-        if available_chars <= pending_chars:
+        else:
             copied_chars = available_chars
             ops = ops + 2
         available_chars += copied_chars
