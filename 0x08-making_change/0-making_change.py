@@ -22,6 +22,8 @@ def makeChange(coins, total):
         if total / coin > 0:
             coins_needed = coins_needed + (total // coin)
             total = total % coin
+        if not total:
+            break
 
     if total != 0 or coins_needed == 0:
         return -1
