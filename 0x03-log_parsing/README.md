@@ -15,3 +15,4 @@ Write a script that reads stdin line by line and computes metrics:
         - if a status code doesn’t appear or is not an integer, don’t print anything for this status code
         - format: `<status code>: <number>`
         - status codes should be printed in ascending order
+- File: [0-stats.py](0-stats.py)
