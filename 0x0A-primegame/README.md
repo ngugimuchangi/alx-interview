@@ -30,3 +30,5 @@ Second round: 5
 
 Third round: 1
 - Ben wins because there are no prime numbers for Maria to choose
+
+File: [0-prime_game.py](0-prime_game.py)
