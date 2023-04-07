@@ -31,9 +31,9 @@ def isWinner(x, nums):
         # else player 2 wins
         prime_count = (len(playing_numbers))
         if prime_count % 2:
-            Ben += 1
-        else:
             Maria += 1
+        else:
+            Ben += 1
     if (Ben == 0 and Maria == 0):
         return None
     return 'Ben' if Ben > Maria else 'Maria'
