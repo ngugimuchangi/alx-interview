@@ -14,8 +14,6 @@ def isWinner(x, nums):
 
     for round in range(x):
         # No winner
-        if nums[round] == 0:
-            continue
         if nums[round] == 1:
             # Player 2 wins if there is only one number to pick from
             Ben += 1
