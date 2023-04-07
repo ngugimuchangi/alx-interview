@@ -11,10 +11,11 @@ def isWinner(x, nums):
     """
     Ben = 0
     Maria = 0
-    if not nums or x <= 0:
-        return None
 
     for round in range(x):
+        # No winner
+        if nums[round] == 0:
+            continue
         if nums[round] == 1:
             # Player 2 wins if there is only one number to pick from
             Ben += 1
