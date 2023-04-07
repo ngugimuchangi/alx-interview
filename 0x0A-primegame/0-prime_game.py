@@ -13,11 +13,6 @@ def isWinner(x, nums):
     Maria = 0
 
     for round in range(x):
-        # No winner
-        if nums[round] == 1:
-            # Player 2 wins if there is only one number to pick from
-            Ben += 1
-            continue
         playing_numbers = [num for num in range(2, nums[round] + 1)]
         index = 0
         # Sieve prime numbers per round
@@ -29,9 +24,10 @@ def isWinner(x, nums):
                 sieve_index += current_prime - 1
             index += 1
         # Determine winner - if number of primes is even player 1 wins
-        # else player 2 wins
+        # else player 2 wins. Player 2  also wins if there is only one
+        # number to pick from
         prime_count = (len(playing_numbers))
-        if prime_count % 2:
+        if prime_count and prime_count % 2:
             Maria += 1
         else:
             Ben += 1
