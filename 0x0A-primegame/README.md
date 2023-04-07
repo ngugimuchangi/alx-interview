@@ -15,9 +15,8 @@ They play `x` rounds of the game, where n may be different for each round. Assum
 - You cannot import any packages in this task
 
 Example:
-```
- x = 3, nums = [4, 5, 1]
-```
+- `x` = `3`, `nums` = `[4, 5, 1]`
+
 First round: 4
 - Maria picks 2 and removes 2, 4, leaving 1, 3
 - Ben picks 3 and removes 3, leaving 1
