@@ -54,6 +54,7 @@ def main():
                 print_log(total_size, status_codes_count)
     except KeyboardInterrupt:
         print_log(total_size, status_codes_count)
+    print_log(total_size, status_codes_count)
 
 
 if __name__ == '__main__':
