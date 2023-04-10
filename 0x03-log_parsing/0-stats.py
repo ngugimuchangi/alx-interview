@@ -9,7 +9,6 @@ def log_parser(log):
     """
     Parses log into different fields
     """
-    log = log.replace('"', '').replace('-', '')
     log_fields = log.split()
     file_size = int(log_fields[-1])
     status_code = log_fields[-2]
@@ -20,16 +19,16 @@ def validate_format(log):
     """
     Validates log format
     """
-    return True if len(log.split()) == 9 else False
+    return False if len(log.split()) < 8 else True
 
 
 def print_log(file_size, status_codes) -> None:
     """
     Prints out log files
     """
-    sorted_status_codes = dict(list(sorted(status_codes.items())))
+    # sorted_status_codes = dict(list(sorted(status_codes.items())))
     print('File size: {}'.format(file_size))
-    for key, value in sorted_status_codes.items():
+    for key, value in status_codes.items():
         print("{}: {}".format(key, value))
 
 
@@ -45,6 +44,9 @@ def main():
     try:
         for log in sys.stdin:
             log_count += 1
+            print(log)
+            print(log.split())
+            print(len(log.split()))
             if not validate_format(log):
                 continue
             status_code, file_size = log_parser(log)
