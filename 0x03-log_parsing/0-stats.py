@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 """
-Log parsing question
+Log stats module
+Parse logs for status codes and file sizes
+and prints them to stdout
+Log input format:
+<IP Address> - [<date>] "GET /projects/260 HTTP/1.1" <status code> <file size>
 """
 import sys
 from typing import Dict, Tuple
@@ -8,7 +12,7 @@ from typing import Dict, Tuple
 
 def log_parser(log: str) -> Tuple:
     """
-    Parses log file into different fields
+    Parses log into different fields
     """
     log = log.replace('"', '').replace('-', '')
     log_fields = log.split()
