@@ -3,6 +3,7 @@
 Log stats module
 """
 import sys
+from operator import itemgetter
 
 
 def log_parser(log):
@@ -26,7 +27,7 @@ def print_log(file_size, status_codes) -> None:
     """
     Prints out log files
     """
-    sorted_status_codes = dict(list(sorted(status_codes.items())))
+    sorted_status_codes = dict(sorted(status_codes.items(), key=itemgetter(0)))
     print('File size: {}'.format(file_size))
     for key, value in sorted_status_codes.items():
         print("{}: {}".format(key, value))
