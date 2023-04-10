@@ -38,7 +38,8 @@ def main():
     Reads logs from std in and prints out statistic
     on status code and file size
     """
-    status_codes_count = {}
+    status_codes_count = {"200": 0, "301": 0, "400": 0, "401": 0,
+                          "403": 0, "405": 0, "500": 0}
     total_size = 0
     log_count = 0
     try:
@@ -48,8 +49,8 @@ def main():
             log_count += 1
             status_code, file_size = log_parser(log)
             total_size += file_size
-            entry = {status_code: status_codes_count.get(status_code, 0) + 1}
-            status_codes_count.update(entry)
+            if status_code in status_codes_count.keys():
+                status_codes_count[status_code] += 1
             if not log_count % 10:
                 print_log(file_size, status_codes_count)
     except KeyboardInterrupt:
