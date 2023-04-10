@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-'''Log module that parses logs, computes stats and prints them'''
-
-
+"""
+Log stats module
+"""
 import sys
-# from typing import Dict, Tuple
 
 
 def log_parser(log):
