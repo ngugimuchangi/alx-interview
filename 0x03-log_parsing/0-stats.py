@@ -19,7 +19,7 @@ def validate_format(log):
     """
     Validates log format
     """
-    return False if len(log.split()) < 8 else True
+    return False if len(log.split()) < 7 else True
 
 
 def print_log(file_size, status_codes) -> None:
@@ -44,9 +44,6 @@ def main():
     try:
         for log in sys.stdin:
             log_count += 1
-            print(log)
-            print(log.split())
-            print(len(log.split()))
             if not validate_format(log):
                 continue
             status_code, file_size = log_parser(log)
