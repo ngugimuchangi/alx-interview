@@ -23,6 +23,15 @@ def validate_format(log):
     return False if len(log.split()) < 7 else True
 
 
+def validate_status_code(status_code):
+    """
+    Check if status code entry is valid
+    """
+    valid_status_codes = ["200", "301", "400", "401",
+                          "403", "404", "405", "500"]
+    return True if status_code in valid_status_codes else False
+
+
 def print_log(file_size, status_codes) -> None:
     """
     Prints out log files
@@ -50,8 +59,9 @@ def main():
                 continue
             status_code, file_size = log_parser(log)
             total_size += file_size
-            entry = {status_code: status_codes_count.get(status_code, 0) + 1}
-            status_codes_count.update(entry)
+            if validate_status_code(status_code):
+                entry = {status_code: status_codes_count.get(status_code, 0) + 1}
+                status_codes_count.update(entry)
             if not log_count % 10:
                 print_log(total_size, status_codes_count)
     except KeyboardInterrupt:
