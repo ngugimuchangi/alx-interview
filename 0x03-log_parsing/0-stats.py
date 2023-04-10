@@ -26,9 +26,9 @@ def print_log(file_size, status_codes) -> None:
     """
     Prints out log files
     """
-    # sorted_status_codes = dict(list(sorted(status_codes.items())))
+    sorted_status_codes = dict(list(sorted(status_codes.items())))
     print('File size: {}'.format(file_size))
-    for key, value in status_codes.items():
+    for key, value in sorted_status_codes:
         print("{}: {}".format(key, value))
 
 
@@ -37,8 +37,7 @@ def main():
     Reads logs from std in and prints out statistic
     on status code and file size
     """
-    status_codes_count = {"200": 0, "301": 0, "400": 0, "401": 0,
-                          "403": 0, "405": 0, "500": 0}
+    status_codes_count = {}
     total_size = 0
     log_count = 0
     try:
@@ -48,8 +47,8 @@ def main():
                 continue
             status_code, file_size = log_parser(log)
             total_size += file_size
-            if status_code in status_codes_count.keys():
-                status_codes_count[status_code] += 1
+            entry = {status_code: status_codes_count.get(status_code, 0) + 1}
+            status_codes_count.update(entry)
             if not log_count % 10:
                 print_log(total_size, status_codes_count)
     except KeyboardInterrupt:
