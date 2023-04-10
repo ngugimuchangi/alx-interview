@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Log stats module"""
+"""
+Log stats module
+"""
 import sys
 from typing import Dict, Tuple
 
@@ -56,7 +58,4 @@ def main():
 
 
 if __name__ == '__main__':
-    """
-    Run main function
-    """
     main()
