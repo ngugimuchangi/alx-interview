@@ -28,7 +28,7 @@ def print_log(file_size, status_codes) -> None:
     """
     sorted_status_codes = dict(list(sorted(status_codes.items())))
     print('File size: {}'.format(file_size))
-    for key, value in sorted_status_codes:
+    for key, value in sorted_status_codes.items():
         print("{}: {}".format(key, value))
 
 
