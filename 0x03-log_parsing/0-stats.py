@@ -20,7 +20,7 @@ def validate_format(log):
     """
     Validates log format
     """
-    return False if len(log.split()) < 7 else True
+    return True if len(log.replace('-', ' ').split()) == 8 else False
 
 
 def validate_status_code(status_code):
