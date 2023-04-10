@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Log stats module"""
+"""Log module that parses logs, computes stats and prints them"""
 import sys
 from typing import Dict, Tuple
 
