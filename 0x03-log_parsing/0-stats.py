@@ -44,9 +44,9 @@ def main():
     log_count = 0
     try:
         for log in sys.stdin:
+            log_count += 1
             if not validate_format(log):
                 continue
-            log_count += 1
             status_code, file_size = log_parser(log)
             total_size += file_size
             if status_code in status_codes_count.keys():
