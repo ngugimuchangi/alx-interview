@@ -12,8 +12,6 @@ def isWinner(x, nums):
     Ben = 0
     Maria = 0
 
-    if x == 10000:
-        return 'Maria'
     for round in range(x):
         playing_numbers = [num for num in range(2, nums[round] + 1)]
         index = 0
