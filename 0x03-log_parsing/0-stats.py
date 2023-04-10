@@ -19,7 +19,7 @@ def validate_format(log):
     """
     Validates log format
     """
-    return False if len(log.split()) < 7 else True
+    return True if len(log.split()) == 9 else False
 
 
 def print_log(file_size, status_codes) -> None:
@@ -51,9 +51,9 @@ def main():
             if status_code in status_codes_count.keys():
                 status_codes_count[status_code] += 1
             if not log_count % 10:
-                print_log(file_size, status_codes_count)
+                print_log(total_size, status_codes_count)
     except KeyboardInterrupt:
-        print_log(file_size, status_codes_count)
+        print_log(total_size, status_codes_count)
 
 
 if __name__ == '__main__':
