@@ -1,11 +1,5 @@
 #!/usr/bin/python3
-"""
-Log stats module
-Parse logs for status codes and file sizes
-and prints them to stdout
-Log input format:
-<IP Address> - [<date>] "GET /projects/260 HTTP/1.1" <status code> <file size>
-"""
+"""Log stats module"""
 import sys
 from typing import Dict, Tuple
 
