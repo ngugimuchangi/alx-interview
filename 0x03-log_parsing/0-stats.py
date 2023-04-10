@@ -3,10 +3,10 @@
 
 
 import sys
-from typing import Dict, Tuple
+# from typing import Dict, Tuple
 
 
-def log_parser(log: str) -> Tuple:
+def log_parser(log):
     """
     Parses log into different fields
     """
@@ -17,14 +17,14 @@ def log_parser(log: str) -> Tuple:
     return status_code, file_size
 
 
-def validate_format(log: str) -> bool:
+def validate_format(log):
     """
     Validates log format
     """
     return True if len(log.split()) == 9 else False
 
 
-def print_log(file_size: int, status_codes: Dict[str, int]) -> None:
+def print_log(file_size, status_codes) -> None:
     """
     Prints out log files
     """
