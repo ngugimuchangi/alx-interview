@@ -60,7 +60,8 @@ def main():
             status_code, file_size = log_parser(log)
             total_size += file_size
             if validate_status_code(status_code):
-                entry = {status_code: status_codes_count.get(status_code, 0) + 1}
+                entry = {status_code:
+                         status_codes_count.get(status_code, 0) + 1}
                 status_codes_count.update(entry)
             if not log_count % 10:
                 print_log(total_size, status_codes_count)
