@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-"""
+'''
 Log stats module
-"""
+'''
 import sys
 from typing import Dict, Tuple
 
