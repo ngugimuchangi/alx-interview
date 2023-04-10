@@ -3,8 +3,6 @@
 Log parsing question
 """
 import sys
-import random
-import time
 from typing import Dict, Tuple
 
 
