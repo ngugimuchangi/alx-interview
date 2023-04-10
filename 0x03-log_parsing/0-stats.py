@@ -27,10 +27,11 @@ def print_log(file_size, status_codes) -> None:
     """
     Prints out log files
     """
-    sorted_status_codes = dict(sorted(status_codes.items(),
-                                      key=itemgetter(0), reverse=True))
+    sorted_status_codes = sorted(status_codes.items(), key=itemgetter(0))
     print('File size: {}'.format(file_size))
-    for key, value in sorted_status_codes.items():
+    for code_count in sorted_status_codes:
+        key = code_count[0]
+        value = code_count[1]
         print("{}: {}".format(key, value))
 
 
