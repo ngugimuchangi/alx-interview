@@ -68,7 +68,8 @@ def main():
     n = args[1]
     check_args(n)
     solutions = n_queens(int(n))
-    print(solutions)
+    for solution in solutions:
+        print(solution)
 
 
 if __name__ == "__main__":
