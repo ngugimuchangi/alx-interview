@@ -32,8 +32,8 @@ def n_queens(n):
             res.append(queens[:])
             return
         for col in range(n):
-            if (col in cols or row + col in positive_diag
-                    or row - col in negative_diag):
+            if (col in cols or row + col in positive_diag or
+                    row - col in negative_diag):
                 continue
             cols.add(col)
             positive_diag.add(row + col)
